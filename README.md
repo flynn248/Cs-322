@@ -1,2 +1,3 @@
-# Cs-322
+# Programming Project 1
 
+Practicing implementing python.
