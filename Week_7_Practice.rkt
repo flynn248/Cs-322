@@ -1,5 +1,6 @@
 #lang Scheme
-
+; Developed by Shane Flynn
+;
 ; Find all prime numbers that is less than or equal to an input number
 ; Argument:
 ;     Integer
@@ -8,9 +9,9 @@
 (define list-primes-below
   (λ (n)
     (cond
-      ((or (zero? n) (eq? n 1)) '(0))
+      ((or (zero? n) (eq? n 1) (eq? n 2)) '(0))
       (else
-       (build-prime-list '() #t n n)))))
+       (build-prime-list '() #t (- n 1) (- n 1))))))
 
 ; Build a list of prime numbers
 ; Helper function for list-primes-below
