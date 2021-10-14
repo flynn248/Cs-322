@@ -1,0 +1,25 @@
+#lang Scheme
+
+(define list-primes-below
+  (λ (n)
+    (cond
+      ((or (zero? n) (eq? n 1)) 0)
+      (else
+       (let ([primeList '()])
+         (let ([isPrime #t])
+           (cons 12 primeList)))))))
+
+
+;(define lpb-outer-loop
+;  (λ (primeList isPrime i)
+;    ([isPrime innerLoop])))
+     
+; use 'floor' to do integer division
+; assume i/2 uses integer division
+
+(define lpb-inner-loop
+  (λ (i x)
+    (cond
+      ((eq? x i) #t)
+      ((zero? (modulo i x)) #f)
+      (else (lpb-inner-loop i (+ x 1))))))

@@ -1,0 +1,15 @@
+;Find the index of a value in a list if it exists
+;Developed by Shane Flynn
+
+#lang Scheme
+
+(define index-of
+  (λ (val lst)
+    (cond
+      ((null? lst) -1)
+      ((not (list? lst)) "Error: Not a list")
+      ((eq? (car lst) val) 0)
+      (else
+       (cond
+         ((eq? (+ 1 (index-of val (cdr lst))) 0) -1)
+         (else (+ 1 (index-of val (cdr lst)))))))))
