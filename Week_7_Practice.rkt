@@ -9,7 +9,7 @@
 (define list-primes-below
   (λ (n)
     (cond
-      ((or (zero? n) (eq? n 1) (eq? n 2)) '(0))
+      ((or (zero? n) (eq? n 1) (eq? n 2)) '())
       (else
        (build-prime-list '() #t (- n 1) (- n 1))))))
 

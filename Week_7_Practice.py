@@ -28,7 +28,7 @@ def buildPrimeList(primeList: list, isPrime: bool, n: int, i: int) -> list:
 
 def listPrimesBelow(n: int) -> list:
     if n == 0 or n == 1 or n == 2:
-        return [0]
+        return []
     
     return buildPrimeList([], True, n - 1, n - 1)
 
