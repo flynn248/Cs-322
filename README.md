@@ -10,7 +10,7 @@ Programming Problems
 Calling (invert lst) should return a modified copy of lst with each sublist’s elements reversed.
 
 (invert ’())
->>>>>>>>>>>>>()
+>()
 
 (invert ’((foo bar)))
 >((bar foo))
@@ -39,9 +39,12 @@ Use examples from Chapter 5 of The Little Schemer to guide you.
 3. Write a Scheme procedure named value-count that takes 2 arguments: a symbol s and a list
 of any values slist. Calling (value-count s slist) should return the number of times that s
 occurs in slist, including in sublists of slist.
->(value-count ’x ’((f x) y (((x z) x)))) \
-3 \
-(value-count ’x ’((f x) y (((x z) () x)))) \
-3
-(value-count ’w ’((f x) y (((x z) x)))) \
-0
+
+(value-count ’x ’((f x) y (((x z) x)))) 
+>3
+
+(value-count ’x ’((f x) y (((x z) () x))))
+>3
+
+(value-count ’w ’((f x) y (((x z) x))))
+>0
