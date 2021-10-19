@@ -9,14 +9,22 @@ Programming Problems
 1. Write a Scheme procedure named invert that takes 1 argument: lst, a list of 2-element lists.
 Calling (invert lst) should return a modified copy of lst with each sublist’s elements reversed.
 
-(invert ’())
->()
+Examples:
 
-(invert ’((foo bar)))
->((bar foo))
+    Input:
+        (invert ’())
+    Output:
+        ()
 
-(invert ’((a 1) (a 2) (1 b) (2 b)))
->((1 a) (2 a) (b 1) (b 2))
+    Input:
+        (invert ’((foo bar)))
+    Output:
+        ((bar foo))
+
+    Input:
+        (invert ’((a 1) (a 2) (1 b) (2 b)))
+    Output:
+        ((1 a) (2 a) (b 1) (b 2))
 
 Hint: The built-in Scheme procedure list creates a list from the given values. You can use cons
 or list to create the lists.
@@ -30,17 +38,17 @@ Use examples from Chapter 5 of The Little Schemer to guide you.
 Examples:
 
     Input:
-    (swapper ’a ’d ’(a b c d))
+        (swapper ’a ’d ’(a b c d))
     Output:
         (d b c a)
 
     Input:
-    (swapper ’a ’d ’(a d () c d))
+        (swapper ’a ’d ’(a d () c d))
     Output:
         (d a () c a)
 
     Input:
-    (swapper ’x ’y ’((x) y (z (x))))
+        (swapper ’x ’y ’((x) y (z (x))))
     Output:
         ((y) x (z (y)))
 
@@ -48,11 +56,19 @@ Examples:
 of any values slist. Calling (value-count s slist) should return the number of times that s
 occurs in slist, including in sublists of slist.
 
-(value-count ’x ’((f x) y (((x z) x)))) 
->3
+Examples:
 
-(value-count ’x ’((f x) y (((x z) () x))))
->3
+    Input:
+        (value-count ’x ’((f x) y (((x z) x)))) 
+    Output:
+        3
 
-(value-count ’w ’((f x) y (((x z) x))))
->0
+    Input:
+        (value-count ’x ’((f x) y (((x z) () x))))
+    Output:
+        3
+
+    Input:
+        (value-count ’w ’((f x) y (((x z) x))))
+    Output:
+        0
