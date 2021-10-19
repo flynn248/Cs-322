@@ -27,13 +27,15 @@ where all occurrences of s1 are replaced by s2 and all occurrences of s2 are rep
 Importantly, swapper should look inside of sublists to try to do this search-and-replace operation.
 Use examples from Chapter 5 of The Little Schemer to guide you.
 
-(swapper ’a ’d ’(a b c d))
+Examples:
+
+a. (swapper ’a ’d ’(a b c d))
 >(d b c a)
 
-(swapper ’a ’d ’(a d () c d))
+b. (swapper ’a ’d ’(a d () c d))
 >(d a () c a)
 
-(swapper ’x ’y ’((x) y (z (x))))
+c. (swapper ’x ’y ’((x) y (z (x))))
 >((y) x (z (y)))
 
 3. Write a Scheme procedure named value-count that takes 2 arguments: a symbol s and a list
