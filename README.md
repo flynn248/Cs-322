@@ -10,7 +10,7 @@ Programming Problems
 Calling (invert lst) should return a modified copy of lst with each sublist’s elements reversed.
 
 (invert ’())
->>()
+>>>>>>>>>>>>>()
 
 (invert ’((foo bar)))
 >((bar foo))
