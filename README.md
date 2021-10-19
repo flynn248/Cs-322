@@ -14,8 +14,10 @@ Calling (invert lst) should return a modified copy of lst with each sublist’s 
 ((bar foo)) \
 (invert ’((a 1) (a 2) (1 b) (2 b))) \
 ((1 a) (2 a) (b 1) (b 2))
+
 Hint: The built-in Scheme procedure list creates a list from the given values. You can use cons
 or list to create the lists.
+
 2. Write a Scheme procedure named swapper that takes 3 arguments: two symbols s1 and s2, and a
 list of any values slist. Calling (swapper s1 s2 slist) should return a modified copy of slist,
 where all occurrences of s1 are replaced by s2 and all occurrences of s2 are replaced by s1.
