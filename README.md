@@ -29,10 +29,10 @@ Use examples from Chapter 5 of The Little Schemer to guide you.
 
 Examples:
 
-    a. (swapper ’a ’d ’(a b c d))
->(d b c a)
+    (swapper ’a ’d ’(a b c d))
+    Output:    (d b c a)
 
-        b. (swapper ’a ’d ’(a d () c d))
+    (swapper ’a ’d ’(a d () c d))
 >(d a () c a)
 
     c. (swapper ’x ’y ’((x) y (z (x))))
