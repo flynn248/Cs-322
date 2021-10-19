@@ -28,15 +28,20 @@ Importantly, swapper should look inside of sublists to try to do this search-and
 Use examples from Chapter 5 of The Little Schemer to guide you.
 
 Examples:
-
+    Input:
     (swapper ’a ’d ’(a b c d))
-    Output:    (d b c a)
+    Output:
+        (d b c a)
 
+    Input:
     (swapper ’a ’d ’(a d () c d))
->(d a () c a)
+    Output:
+        (d a () c a)
 
-    c. (swapper ’x ’y ’((x) y (z (x))))
->((y) x (z (y)))
+    Input:
+    (swapper ’x ’y ’((x) y (z (x))))
+    Output:
+        ((y) x (z (y)))
 
 3. Write a Scheme procedure named value-count that takes 2 arguments: a symbol s and a list
 of any values slist. Calling (value-count s slist) should return the number of times that s
