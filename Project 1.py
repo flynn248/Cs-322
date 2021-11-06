@@ -43,26 +43,21 @@ def isBst(binT: list) -> bool:
     if not binT[1] and not binT[2]: # if left and right children don't exist
         return True
     
-    parentValue = binT[0]
     isValid = True
 
-    for i in range(1, 3):
-        if binT[i]:
-            childValue = binT[i][0]
-            if i % 2 == 1: # left child node
-                if childValue > parentValue:
-                    isValid = False
-            else: # right child node
-                if childValue <= parentValue:
-                    isValid = False
-            
-            if isValid:
-                isValid = isBst(binT[i])
+    if binT[1]: # if left child exists
+        isValid = isValidNode(binT, 1, isValid)
+        if isValid:
+            isValid = isBst(binT[1])
+    if binT[2]: # if right child exists
+        isValid = isValidNode(binT, 2, isValid)
+        if isValid:
+            isValid = isBst(binT[2])
     
     return isValid
 
 
-def isValid(binT: list, i: int) -> bool:
+def isValidNode(binT: list, i: int, isValid: bool) -> bool:
     parentValue = binT[0]
     childValue = binT[i][0]
     if i % 2 == 1: # left child node
@@ -71,7 +66,8 @@ def isValid(binT: list, i: int) -> bool:
     else: # right child node
         if childValue <= parentValue:
             return False
-# make a helper function
+
+    return isValid
 
 def main():
     
@@ -94,34 +90,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-'''
-    if not binT[1]: # if left sub-tree doesn't exist
-        lRetVal = True
-    else:
-        lChildValue = binT[1][0]
-        
-        if lChildValue <= parentValue:
-            lRetVal = isBst(binT[1])
-        else:
-            lRetVal = False
-    
-    rRetVal = False
-
-    if not binT[2]: # if right sub-tree doesn't exist
-        rRetVal = True
-    else:
-        rChildValue = binT[2][0]
-
-        if rChildValue > parentValue:
-            rRetVal = isBst(binT[2])
-        else:
-            rRetVal = False
-    
-    if lRetVal and rRetVal:
-        return True
-    else:
-        return False
-'''
