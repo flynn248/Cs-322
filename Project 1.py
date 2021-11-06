@@ -59,7 +59,6 @@ def isBst(binT: list) -> bool:
     
     return isValid
 
-
 def isValidNode(binT: list, i: int, isValid: bool) -> bool:
     parentValue = binT[0]
     childValue = binT[i][0]
