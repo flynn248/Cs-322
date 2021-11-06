@@ -2,8 +2,9 @@
 # List all prime numbers including and below a given integer
 # isBst: Check if a list is a valid binary tree
 
-from io import RawIOBase
+################ Part 1 ################
 
+from io import RawIOBase
 
 def checkIfPrime(i: int, x: int=2) -> bool:
     if (i % x) == 0:
@@ -35,6 +36,8 @@ def listPrimesBelow(n: int) -> list:
         return []
     
     return buildPrimeList([], True, n - 1, n - 1)
+
+################ Part 2 ################
 
 def isBst(binT: list) -> bool:
     if not binT: # if list is empty
@@ -83,10 +86,11 @@ def main():
     [4, [2, [1, [], []], [3, [], []]], [1, [5, [], []], []]], #f
     [4, [7, [1, [], []], [3, [], []]], [6, [5, [], []], []]], #f
     [4, [2, [1, [], []], [1, [], []]], [6, [5, [], []], []]], #f
-    [4, [2, [4, [], []], [3, [], []]], [6, [5, [], []], []]]] #f
+    [4, [2, [4, [], []], [3, [], []]], [6, [5, [], []], []]], #f
+    [4, [2, [1, [], []], [3, [], []]], [6, [], [9, [], []]]]] #t
 
     for i in range(0, len(tests)):
-        print(isBst(tests[i]))
+        print(f"Test Case {i + 1}: {isBst(tests[i])}")
 
 if __name__ == '__main__':
     main()
